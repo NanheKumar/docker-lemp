@@ -1,6 +1,6 @@
 # DOCKER LEMP
 - Nginx
-- PHP 7.2-fpm or 7.3-fpm
+- PHP 7.0-fpm 
 - MySQL
 - PHPMyAdmin
 - Maildev
