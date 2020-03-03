@@ -2,7 +2,7 @@ version: '3'
 services:
 
     php:
-        image: nanhekumar/php-fpm:7.0 # Also available : atillay/lemp-php:7.2
+        image: nanhekumar/lemp-php-fpm:7.0 # Also available : atillay/lemp-php:7.2
         env_file:
             - .env
         volumes:
@@ -10,13 +10,13 @@ services:
             - .:/var/www:cached
 
     nginx:
-        image: atillay/lemp-nginx
+        image: nanhekumar/lemp-nginx
         ports:
             - ${SERVER_PORT}:80
         volumes:
             - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./log:/var/log/nginx
-            - ./public:/var/www/public
+            - ./html:/var/www/html
 
     mysql:
         image: mysql:5.7
